@@ -1,0 +1,29 @@
+{
+  "name": "TicTacToe",
+  "version": "0.1.0",
+  "private": true,
+  "scripts": {
+    "start": "node app.js"
+  },
+  "dependencies": {
+    "async": "^2.6.0",
+    "connect": "^3.6.6",
+    "connect-mongo": "^2.0.1",
+    "cookie": "^0.3.1",
+    "cookie-parser": "^1.4.3",
+    "crypto": "^1.0.1",
+    "ejs": "*",
+    "ejs-locals": "^1.0.2",
+    "express": "3.3.8",
+    "gulp-if": "^2.0.2",
+    "gulp-minify-css": "^1.2.4",
+    "gulp-uglify": "^3.0.0",
+    "gulp-useref": "^3.1.5",
+    "mongodb": "^3.0.6",
+    "mongoose": "^5.0.14",
+    "nconf": "^0.10.0",
+    "socket.io": "^2.1.0",
+    "util": "^0.10.3",
+    "winston": "^2.4.1"
+  }
+}

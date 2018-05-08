@@ -1,0 +1,9 @@
+<% layout('./layout/page') -%>
+<% block('title', error.message) -%>
+<% block('image', 'public/images/main.jpg'); -%>
+<div class="error-block">
+    <h4>Извините, произошла ошибка</h4>
+    <h4><%=error.message%></h4>
+</div>
+
+

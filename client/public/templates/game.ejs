@@ -1,0 +1,71 @@
+<% layout('layout/page') -%>
+<% block('title', "TicTacToe > Игра") -%>
+<% block('image', '../public/images/main.jpg'); -%>
+<script src="/vendor/bower_components/socket.io-client/dist/socket.io.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="game-header">
+                <h1>Игра</h1>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4">
+            <div class="game-stats">
+                <h2>Статистика</h2>
+                <div id="stats">
+                    <p>Завершенных игр: <span class="stats-str" id="games"></span></p>
+                    <p>Пользователей на сайте: <span class="stats-str" id="unique"></span></p>
+                    <p>Активных игр: <span class="stats-str" id="active"></span></p>
+                    <p>Пользователей в игре: <span class="stats-str" id="users"></span></p>
+                </div>
+            </div>
+
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <div class="game-board">
+                <a href="#" class="exitButton" name="Выход">x</a>
+                <h2>Игра</h2>
+                <p>Игровая комната:<span id="roomID"></span></p>
+                <span id="status"></span><span id="ruller-timer">(<span id="exit-timer"></span> сек.)</span>
+                <br>
+                <div class="board">
+
+
+                    <div id="timerpanel">Время до конца хода: <span id="timer"></span> сек.</div>
+                    <span id="notice">Внимание! Общее время хода с учетом переподключений
+                        не должно превышать одной минуты! Иначе вам автоматически будет засчитано поражение!</span>
+                    <div class="game-field" id="game-field">
+                        <div id="mask"></div>
+                        <div id="masked"></div>
+                        <div id="1x1" class="free game-cell"></div>
+                        <div id="1x2" class="free game-cell"></div>
+                        <div id="1x3" class="free game-cell"></div>
+                        <div id="2x1" class="free game-cell"></div>
+                        <div id="2x2" class="free game-cell"></div>
+                        <div id="2x3" class="free game-cell"></div>
+                        <div id="3x1" class="free game-cell"></div>
+                        <div id="3x2" class="free game-cell"></div>
+                        <div id="3x3" class="free game-cell"></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalwindow" tabindex="-1" data-backdrop="static" data-keyboard="false">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-message"></p>
+                <form name="data-form" id="data-form">
+                    <button class="button end-game" data-dismiss="modal">Выход</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/js/game.js"></script>

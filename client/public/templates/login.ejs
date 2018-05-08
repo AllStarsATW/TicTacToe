@@ -1,0 +1,51 @@
+<% layout('./layout/page') -%>
+<% block('title', "TicTacToe > Регистрация и вход") -%>
+<% block('image', 'public/images/main.jpg'); -%>
+<div class="container twin-form">
+        <div class="login-form">
+            <form name="login-form" id="login">
+                <h3>Авторизация</h3>
+                <p>Авторизуйтесь при помощи логина и пароля от вашего аккаунта на TicTacToe.</p>
+                <span class="help-block error"></span>
+                <div class="form-group">
+                    <label for="login-username" class="control-label">Имя учетной записи</label>
+                    <input name="username" value="" type="text" class="form-control" id="login-username" placeholder="Имя">
+                    <label for="login-password" class="control-label">Пароль</label>
+                    <input name="password" value="" type="password" class="form-control" id="login-password" placeholder="Пароль">
+                    <button type="submit" class="button" data-loading-text="Отправляю...">Войти</button>
+                </div>
+            </form>
+        </div>
+            <div class="auth-separator"></div>
+        <div class="registration-form">
+            <h3>Регистрация</h3>
+            <p>Введите все необходимые данные для создания вашего аккаунта на TicTacToe.</p>
+            <form name="login-form" id="registration">
+                <span class="help-block error"></span>
+                <div class="form-group">
+                    <label for="input-username" class="control-label">Имя</label>
+                    <input name="username" value="" type="text" class="form-control" id="input-username" placeholder="Имя">
+                    <label for="input-email" class="control-label">Email</label>
+                    <input name="email" value="" type="text" class="form-control" id="input-email" placeholder="Email">
+                    <label for="input-password" class="control-label">Пароль</label>
+                    <input name="password" value="" type="password" class="form-control" id="input-password" placeholder="Пароль">
+                    <button type="submit" class="button" data-loading-text="Отправляю...">Зарегистрироваться</button>
+                </div>
+            </form>
+        </div>
+</div>
+<div class="modal fade" id="modalwindow" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">x</button>
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-message"></p>
+                <button class="button button-modal" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="/public/js/login.js"></script>

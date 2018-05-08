@@ -1,0 +1,35 @@
+<% layout('layout/page') -%>
+<% block('title', "TicTacToe > Профиль") -%>
+<% block('image', 'public/images/main.jpg'); -%>
+<script src="../../vendor/bower_components/socket.io-client/dist/socket.io.js"></script>
+<%
+    var wins = user.get('wins');
+    var loses = user.get('loses');
+    var draw = user.get('draw');
+    var games = wins+loses+draw;
+    var date = user.get('created');
+    var newDate = date.getDate() + "." + (date.getMonth() + 1) + "." + date.getFullYear();
+%>
+<div class="container profile-background">
+    <h1>Профиль пользователя</h1>
+    <div class="user-stats">
+        <h3>Игровая статистика</h3>
+        <p>Всего сыграно игр: <span class="profile-data"><%=games%></span></p>
+        <p>Всего побед: <span class="profile-data"><%-wins%></span></p>
+        <p>Всего поражений: <span class="profile-data"><%-loses%></span></p>
+        <p>Всего игр в ничью: <span class="profile-data"><%-draw%></span></p>
+        <p>Процент побед:
+            <span class="profile-data">
+                <%-persents = (games == 0) ? 0 : (((wins / games) * 100)    .toFixed(2) + '%')%>
+            </span>
+        </p>
+    </div>
+    <div class="user-data">
+        <h3>Учетные данные</h3>
+        <p>Имя учетной записи: <span class="profile-data"><%-user.get('username')%></span></p>
+        <p>Электронная почта: <span class="profile-data"><%-user.get('email')%></span></p>
+        <p>Дата создания аккаунта: <span class="profile-data"><%-newDate%></span></p>
+    </div>
+</div>
+
+

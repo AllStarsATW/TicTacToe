@@ -1,0 +1,50 @@
+<% layout('layout/page') -%>
+<% block('title', "TicTacToe > Лобби") -%>
+<% block('image', 'public/images/main.jpg'); -%>
+<script src="../../vendor/bower_components/socket.io-client/dist/socket.io.js"></script>
+<div class="container">
+    <div class="row">
+        <div class="col-md-12">
+            <div class="lobby-header">
+                <h1>Лобби</h1>
+            </div>
+        </div>
+        <div class="col-md-3 col-sm-4">
+            <div class="lobby-stats">
+                <h2>Статистика</h2>
+                <div id="stats">
+                    <p>Завершенных игр: <span class="stats-str" id="games"></span></p>
+                    <p>Пользователей на сайте: <span class="stats-str" id="unique"></span></p>
+                    <p>Активных игр: <span class="stats-str" id="active"></span></p>
+                    <p>Пользователей в игре: <span class="stats-str" id="users"></span></p>
+                </div>
+                <button class="button" id="create">Создать игру</button>
+                <button class="button" id="history">История игр</button>
+            </div>
+
+        </div>
+        <div class="col-md-9 col-sm-8">
+            <div class="lobby-games">
+                <h2>Доступные игры</h2>
+                <ul id="games-list">
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="modal fade" id="modalwindow" tabindex="-1">
+    <div class="modal-dialog modal-sm">
+        <div class="modal-content">
+            <div class="modal-header">
+                <button class="close" data-dismiss="modal">x</button>
+                <h3 class="modal-title"></h3>
+            </div>
+            <div class="modal-body">
+                <p class="modal-message"></p>
+                <button class="button button-modal" data-dismiss="modal">Ok</button>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script src="/public/js/lobby.js"></script>

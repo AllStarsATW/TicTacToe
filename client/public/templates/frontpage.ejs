@@ -1,0 +1,15 @@
+<% layout('./layout/page') -%>
+<% block('title', 'TicTacToe'); -%>
+<% block('image', 'public/images/main.jpg'); -%>
+
+<h1 class="main">Играйте в крестики нолики!</h1>
+<p class="main">Это отличная площадка для игры с друзьями и случайными соперниками.</p>
+<% if (user) { %>
+    <div class="bildbord-buttoln">
+        <a href="/lobby" class="button button-main">Начать игру</a>
+    </div>
+<% } else { %>
+    <div class="bildbord-buttoln">
+        <a href="/login" class="button button-main">Начать игру</a>
+    </div>
+<% } %>
